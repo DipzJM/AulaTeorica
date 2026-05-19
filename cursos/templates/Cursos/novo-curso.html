@@ -1,0 +1,12 @@
+{%extends 'Cursos/base.html'}
+
+{%block main %}
+
+<form action="{% url 'novo-curso'}" method="POST">
+    {{%csrf}}
+    {{form.as_p}}
+
+    <input type="submit">
+</form>
+
+{%endblock}

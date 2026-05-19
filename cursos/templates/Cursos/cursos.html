@@ -1,0 +1,15 @@
+{%extends 'Cursos/base.html'}
+
+    {%block main %}
+    <ul>
+  
+    {%for curso in cursos %}
+        <li>{{curso}}: {{curso.professor}}, Alunos:
+        {%for aluno in curso.alunos.all %}
+            <a href="{% url 'aluno-url' aluno.id}">{{aluno}}</a>
+        {%endfor}
+        </li>
+    {% endfor %}
+    
+    </ul>
+    {%endblock}

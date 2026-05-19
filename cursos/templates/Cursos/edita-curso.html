@@ -1,0 +1,12 @@
+{%extends 'Cursos/base.html'}
+
+{%block main %}
+
+<form action="{% url 'edita-curso' curso.id %}" method="POST">
+    {{%csrf_token%}}
+    {{form.as_p}}
+
+    <input type="submit">
+</form>
+
+{%endblock}
